@@ -10,4 +10,28 @@ public class State
     private String xName = "";
     private String oName = "";
     private int[][] board = new int[Constants.BOARD_SIZE][Constants.BOARD_SIZE];
+    public int getGameState() {
+        return this.gameState;
+    }
+    public void setGameState(int gameState) {
+        this.gameState = gameState;
+    }
+    public int getWhoseMove() {
+        return this.whoseMove;
+    }
+    public String getXName(String xName) {
+        return this.xName;
+    }
+    public String getOName(String oName) {
+        return this.oName;
+    }
+    public int getBoardCell(int row, int col) {
+        return this.board[row][col];
+    }
+    public void setBoardCell(int row, int col, int value) {
+        this.board[row][col] = value;
+    }
+    public boolean isWinner() {
+        
+    }
 }
