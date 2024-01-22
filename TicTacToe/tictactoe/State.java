@@ -32,6 +32,9 @@ public class State
         this.board[row][col] = value;
     }
     public boolean isWinner() {
-        
+        boolean isWinner= false;
+        for (int i = 0; ) {
+            
+        }
     }
 }
