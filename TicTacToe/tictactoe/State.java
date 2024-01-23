@@ -32,9 +32,34 @@ public class State
         this.board[row][col] = value;
     }
     public boolean isWinner() {
-        boolean isWinner= false;
-        for (int i = 0; ) {
-            
+        boolean isWinner = false;
+        int tallyCount = 0;
+        for (int i = 0; i <= 2; i++) {
+            for (int j = 0; j <= 2; j++) {
+                tallyCount += board[i][j];
+            }
+            if (tallyCount == 3 || tallyCount == -3) {
+                isWinner = true;
+            }
         }
+        for (int j = 0; j <= 2; j++) {
+            for (int i = 0; i <= 2; i++) {
+                tallyCount += board[j][i];
+            }
+            if (tallyCount == 3 || tallyCount == -3) {
+                isWinner = true;
+            }
+        }
+        for (int i = 0; i <= 2; i++) {
+            tallyCount += board[i][-i + 2];
+            if (tallyCount ==3 || tallyCount == -3) {
+                isWinner = true;
+            }
+        }
+        return isWinner;
+    }
+    public boolean isTie() {
+        boolean isTie = false;
+        for (int i = 0; i <= 2; 
     }
 }
