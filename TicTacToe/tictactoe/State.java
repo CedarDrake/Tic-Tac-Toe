@@ -33,26 +33,26 @@ public class State
     }
     public boolean isWinner() {
         boolean isWinner = false;
-        int tallyCount = 0;
+        int winnerCount = 0;
         for (int i = 0; i <= 2; i++) {
             for (int j = 0; j <= 2; j++) {
-                tallyCount += board[i][j];
+                winnerCount += board[i][j];
             }
-            if (tallyCount == 3 || tallyCount == -3) {
+            if (winnerCount == 3 || winnerCount == -3) {
                 isWinner = true;
             }
         }
         for (int j = 0; j <= 2; j++) {
             for (int i = 0; i <= 2; i++) {
-                tallyCount += board[j][i];
+                winnerCount += board[j][i];
             }
-            if (tallyCount == 3 || tallyCount == -3) {
+            if (winnerCount == 3 || winnerCount == -3) {
                 isWinner = true;
             }
         }
         for (int i = 0; i <= 2; i++) {
-            tallyCount += board[i][-i + 2];
-            if (tallyCount ==3 || tallyCount == -3) {
+            winnerCount += board[i][-i + 2];
+            if (winnerCount ==3 || winnerCount == -3) {
                 isWinner = true;
             }
         }
@@ -60,6 +60,17 @@ public class State
     }
     public boolean isTie() {
         boolean isTie = false;
-        for (int i = 0; i <= 2; 
+        int tieCount = 0;
+        for (int i = 0; i <= 2; i++) {
+            for (int j = 0; j <= 2; j++) {
+                if (board[i][j] == 1 || board[i][j] == -1) {
+                    tieCount += 1;
+                }
+            }
+        }
+        if (tieCount >= 9) {
+            isTie = true;
+        }
+        return isTie;
     }
 }
