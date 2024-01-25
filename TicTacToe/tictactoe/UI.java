@@ -21,7 +21,7 @@ public class UI
         return (whoseMove == -1) ? xName : oName;
     }
 
-    public boolean isLegalMove(int state, int row, int col) {
+    public boolean isLegalMove(State state, int row, int col) {
         return 1 <= row && row <= Constants.BOARD_SIZE &&
         1 <= col && col <= Constants.BOARD_SIZE &&
         state.getBoardCell(row, col) == Constants.BLANK;
