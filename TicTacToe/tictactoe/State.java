@@ -16,13 +16,22 @@ public class State
     public void setGameState(int gameState) {
         this.gameState = gameState;
     }
+    public void setWhoseMove(int whoseMove) {
+        this.whoseMove = whoseMove;
+    }
+    public void setXName(String xName) {
+        this.xName = xName;
+    }
+    public void setOName(String oName) {
+        this.oName = oName;
+    }
     public int getWhoseMove() {
         return this.whoseMove;
     }
-    public String getXName(String xName) {
+    public String getXName() {
         return this.xName;
     }
-    public String getOName(String oName) {
+    public String getOName() {
         return this.oName;
     }
     public int getBoardCell(int row, int col) {
