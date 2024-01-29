@@ -38,7 +38,7 @@ public class State
         return this.board[row][col];
     }
     public void setBoardCell(int row, int col, int value) {
-        this.board[row][col] = value;
+        this.board[row-1][col-1] = value;
     }
     public boolean isWinner() {
         boolean isWinner = false;
