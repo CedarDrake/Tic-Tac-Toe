@@ -41,13 +41,16 @@ public class UI
 
     public int getMoveRow(int whoseMove, String xName, String oName) {
         int row = 0;
-        if (
         while (row <= 0 || row >= 4) {
             try {
                 System.out.printf(Constants.GET_ROW_MOVE, getXOrO(whoseMove), getPlayerName(whoseMove, xName, oName));
                 row = scanner.nextInt();
+                if (row < 1 || row > 3) {
+                    System.out.println(Constants.INVALID_ROW_OR_COLUMN);
+                }
             } catch (Exception e) {
                 System.out.println(Constants.INVALID_ROW_OR_COLUMN);
+                scanner.nextLine();
             }
         }
         return row;
@@ -59,8 +62,12 @@ public class UI
             try {
                 System.out.printf(Constants.GET_COL_MOVE, getXOrO(whoseMove), getPlayerName(whoseMove, xName, oName));
                 col = scanner.nextInt();
+                if (col < 1 || col > 3) {
+                    System.out.println(Constants.INVALID_ROW_OR_COLUMN);
+                }
             } catch (Exception e) {
                 System.out.println(Constants.INVALID_ROW_OR_COLUMN);
+                scanner.nextLine();
             }
         }
         return col;
