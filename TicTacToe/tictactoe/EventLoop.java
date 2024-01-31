@@ -15,7 +15,11 @@ public class EventLoop {
       int gameState = state.getGameState();
       if (gameState == Constants.STANDBY) {
         state.setGameState(Constants.GET_X_NAME);
-
+        for (int i = 0; i <= 2; i++) {
+            for (int j = 0; j <= 2; j++) {
+                state.setBoardCell(i, j, 0);
+            }
+        }
       } else if (gameState == Constants.GET_X_NAME) {
         state.setXName(ui.promptForName("X"));
         state.setGameState(Constants.GET_O_NAME);
@@ -43,7 +47,7 @@ public class EventLoop {
       } else if (gameState == Constants.MAKE_MOVE) {
         ui.printMove(state, row, col);
         System.out.println();
-        state.setBoardCell( row, col, state.getWhoseMove());
+        state.setBoardCell( row-1, col-1, state.getWhoseMove());
         state.setGameState(Constants.CHECK_IF_WINNER);
 
       } else if (gameState == Constants.CHECK_IF_WINNER) {
